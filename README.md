@@ -76,3 +76,7 @@ We welcome contributions! Please follow these steps:
 - Develop the advanced analytics dashboard.
 - Explore SSR/SSG for enhanced performance and SEO.
 - Expand multi-user role support for collaborative marketing features.
+
+# TODO
+
+- improve design and add features
