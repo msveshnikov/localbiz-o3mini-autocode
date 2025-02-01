@@ -3,6 +3,9 @@
 A platform for small business marketing focused on ROI for professions such as plumbers, lawyers,
 and doctors.
 
+![alt text](image.png)
+
+
 ## Overview
 
 This project is designed to help businesses maximize their return on investment through targeted
