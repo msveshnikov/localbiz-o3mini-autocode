@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [darkMode, setDarkMode] = useState(false);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    useEffect(() => {
+        if (darkMode) {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.remove('dark');
+        }
+    }, [darkMode]);
+
+    const toggleDarkMode = () => {
+        setDarkMode((prevMode) => !prevMode);
+    };
+
+    return (
+        <div className="app">
+            <header className="app-header">
+                <h1>Small Business ROI Marketing Platform</h1>
+                <button className="toggle-button" onClick={toggleDarkMode}>
+                    {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                </button>
+            </header>
+            <main className="app-main">
+                <section className="hero">
+                    <h2>Maximize Your ROI</h2>
+                    <p>
+                        Empowering small businesses like plumbers, lawyers, and doctors with
+                        targeted marketing strategies and a user-friendly interface.
+                    </p>
+                </section>
+                <section className="features">
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Modern Frontend Architecture with React and Vite</li>
+                        <li>
+                            Responsive and Adaptive Layouts for an optimal experience across devices
+                        </li>
+                        <li>Customizable User Interface with dark mode and theme customization</li>
+                        <li>Future Analytics Dashboard for detailed campaign performance</li>
+                        <li>Modular Component Library for scalable marketing campaigns</li>
+                        <li>Enhanced User Experience with micro-interactions and animations</li>
+                    </ul>
+                </section>
+            </main>
+            <footer className="app-footer">
+                <p>Empowering small businesses to thrive in the digital age.</p>
+            </footer>
+        </div>
+    );
 }
 
-export default App
+export default App;
